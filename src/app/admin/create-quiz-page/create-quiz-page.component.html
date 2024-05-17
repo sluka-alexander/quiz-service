@@ -1,0 +1,16 @@
+<p>create-quiz-page works!</p>
+
+<form class="form form--create-quiz" [formGroup]="form" (ngSubmit)="submit()">
+  <h1>Создать квиз</h1>
+
+  <div class="form-control">
+    <label for="name">Название</label>
+    <input id="name" type="text" placeholder="Введите название квиза" formControlName="name">
+  </div>
+  <div class="form-control">
+    <label for="description" formControlName="description">Описание</label>
+    <input id="description" type="text" placeholder="Введите Описание квиза">
+  </div>
+  <button (click)="createQuestionBlock()">Создать вопрос</button>
+  <button>Сохранить</button>
+</form>

@@ -1,0 +1,16 @@
+<h1>Admin layout</h1>
+<ul>
+  <li>
+    <a [routerLink]="['/admin', 'dashboard']">Главная</a>
+  </li>
+  <li>
+    <a [routerLink]="['/admin', 'create']">Создать квиз</a>
+  </li>
+  <li>
+    <a href="#" (click)="logout($event)">Выйти</a>
+  </li>
+</ul>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
+
