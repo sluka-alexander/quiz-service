@@ -1,5 +1,4 @@
 import {NgModule} from "@angular/core";
-import {CommonModule} from "@angular/common";
 import {RouterModule} from "@angular/router";
 import { AdminLayoutComponent } from './shared/components/admin-layout/admin-layout.component';
 import { LoginPageComponent } from './shared/components/login-page/login-page.component';
@@ -10,6 +9,7 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {AuthService} from "./services/auth.service";
 import {SharedModule} from "../shared/shared.module";
 import {AuthGuard} from "./services/auth.guard";
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -20,10 +20,10 @@ import {AuthGuard} from "./services/auth.guard";
     EditQuizPageComponent
   ],
   imports: [
-    CommonModule,
     FormsModule,
     ReactiveFormsModule,
     SharedModule,
+    CommonModule,
     RouterModule.forChild([
       {
         path: '', component: AdminLayoutComponent, children: [
@@ -44,7 +44,7 @@ import {AuthGuard} from "./services/auth.guard";
           }
         ]
       }
-    ])
+    ]),
   ],
   exports: [RouterModule],
   providers: [AuthService, AuthGuard]

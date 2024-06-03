@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Question, Quiz} from "../../shared/interfaces";
+import {QuizService} from "../../shared/quiz.service";
 
 @Component({
   selector: 'app-create-quiz-page',
@@ -9,26 +10,42 @@ import {Question, Quiz} from "../../shared/interfaces";
 })
 export class CreateQuizPageComponent implements OnInit {
 
-  form: FormGroup
+  form: FormGroup;
+  formCreateQuestion: FormGroup;
   questions: [Question];
+  name: string;
+  desc: string;
 
-  constructor() {
+
+  constructor(private quizService: QuizService, private fb: FormBuilder) {
     this.questions = [{
-      description: 'Сколько два плюс два',
-      answer: '4',
-      clue: 'Подсказка',
+      description: '',
+      answer: '',
+      clue: '',
     }]
+    this.name = '';
+    this.desc = '';
   }
 
   ngOnInit(): void {
     this.form = new FormGroup({
       name: new FormControl(null, Validators.required),
-      desc: new FormControl(null)
-    })
+      description: new FormControl(null),
+      author: new FormControl(null),
+    });
+    this.formCreateQuestion = new FormGroup({
+      nameQuestion: new FormControl(null, Validators.required),
+      answerQuestion: new FormControl(Validators.required),
+      clueQuestion: new FormControl(null),
+    });
   }
 
   createQuestionBlock() {
-
+    this.questions.push({
+      description: '',
+      answer: '',
+      clue: '',
+    })
   }
 
   submit() {
@@ -41,5 +58,13 @@ export class CreateQuizPageComponent implements OnInit {
       description: this.form.value.description,
       questions: this.questions
     }
+
+    this.quizService.create(quiz).subscribe( ()=> {
+      this.form.reset();
+    })
+  }
+
+  removeQuestion(index: any) {
+    this.questions.splice(index, 1);
   }
 }

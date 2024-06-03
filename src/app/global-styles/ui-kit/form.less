@@ -1,0 +1,63 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  max-width: 360px;
+
+  &__group-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  &__title {
+    .display-xs-bold();
+
+    text-align: center;
+  }
+
+  &__group-label {
+    .text-sm-medium();
+
+    display: block;
+    margin-bottom: 6px;
+    color: @gray-700;
+  }
+
+  &__massage-error {
+    .text-xs-regular();
+
+    margin-top: 2px;
+    color: @red-500;
+  }
+
+  &__buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    button {
+      width: 100%;
+    }
+  }
+
+  &__delimiter {
+    .size(1px, 100%);
+
+    background-color: @gray-200;
+
+    &--with-padding {
+      margin-bottom: 24px;
+    }
+  }
+
+  &--center {
+    margin: 0 auto;
+  }
+}

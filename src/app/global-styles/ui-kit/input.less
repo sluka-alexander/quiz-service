@@ -1,0 +1,75 @@
+input[type='text'],
+input[type='password'],
+input[type='email'],
+textarea {
+  .size(40px, 100%);
+  .text-sm-regular();
+
+  box-sizing: border-box;
+  max-width: 360px;
+  padding: 0 14px;
+  border: 1px solid @gray-300;
+  border-radius: @border-radius;
+  color: @gray-700;
+  transition: 0.2s;
+  box-shadow: @shadow-xs;
+
+  &:hover {
+    border-color: @brand-400;
+  }
+
+  &:focus {
+    border-color: @brand-200;
+    box-shadow: 0 0 0 4px @brand-100;
+  }
+
+  &::placeholder {
+    color: @gray-400;
+    user-select: none;
+  }
+
+  &.ng-invalid.ng-touched {
+    color: @red-500;
+    border-color: @red-500;
+
+    &:hover,
+    &:focus {
+      border-color: @red-500;
+    }
+  }
+}
+
+input[type='password'] {
+  padding-right: 38px;
+}
+
+.password-control {
+  position: relative;
+
+  .icon-view,
+  .icon-view_hide {
+    .size(40px);
+    .flex-center();
+
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 20px;
+    transition: 0.2s;
+
+    &:active {
+      transform: scale(0.7);
+    }
+  }
+}
+
+textarea {
+  height: 100px;
+  padding: 10px 14px;
+  resize: none;
+
+  &:focus {
+    outline: none;
+  }
+}

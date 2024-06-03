@@ -1,16 +1,53 @@
-<p>create-quiz-page works!</p>
+<div class="create-quiz-page container">
+  <form class="form form--center form--create-quiz" [formGroup]="form">
+    <div class="form__title">Cоздать квиз</div>
+    <div class="form__wrapper">
+      <div class="form__control">
+        <label for="name" class="form__group-label">Название*</label>
+        <input id="name" type="text" placeholder="Введите название квиза" formControlName="name">
+        <div *ngIf="form.get('name')?.invalid &&
+                  form.get('name')?.touched &&
+                  form.get('name')?.errors?.['required']"
+             class="form__massage-error">
+          Поле не может быть пустым
+        </div>
+      </div>
+      <div class="form__control">
+        <label for="description" class="form__group-label">Описание</label>
+        <input id="description" type="text" placeholder="Введите описание квиза" formControlName="description">
+      </div>
+      <div class="form__control">
+        <label for="author" class="form__group-label">Автор квиза</label>
+        <input id="author" type="text" placeholder="Введите автора" formControlName="author">
+      </div>
+    </div>
+    <div class="form__delimiter form__delimiter--with-padding"></div>
+  </form>
+  <form class="form form form--center form--create-question" [formGroup]="formCreateQuestion">
+    <div  *ngIf="questions.length" class="form__wrapper">
+      <div class="form__group-controls" *ngFor="let question of questions; let idx = index;">
+        <div class="form__control" >
+          <div class="form__label-wrapper">
+            <label class="form__group-label">Вопрос № {{idx + 1}} </label>
+            <button class="button button--red button--small" (click)="removeQuestion(idx)">Удалить вопрос</button>
+          </div>
+          <textarea [ngModelOptions]="{standalone: true}" class="create-question__description" placeholder="Введите вопрос" [(ngModel)]="questions[idx].description"></textarea>
+        </div>
+        <div class="form__control" >
+          <input type="text" [ngModelOptions]="{standalone: true}" placeholder="Введите ответ" [(ngModel)]="questions[idx].answer">
+        </div>
+        <div class="form__control" >
+          <textarea [ngModelOptions]="{standalone: true}" placeholder="Введите подсказку" class="create-question__clue" [(ngModel)]="questions[idx].clue"></textarea>
+        </div>
+      </div>
+    </div>
+    <div class="form__buttons">
+      <button class="button button--black button--small" (click)="createQuestionBlock()">Добавить вопрос</button>
+      <button (click)="submit()"
+              class="button button--primary"
+              [disabled]="form.invalid">Сохранить</button>
+    </div>
+  </form>
+</div>
 
-<form class="form form--create-quiz" [formGroup]="form" (ngSubmit)="submit()">
-  <h1>Создать квиз</h1>
 
-  <div class="form-control">
-    <label for="name">Название</label>
-    <input id="name" type="text" placeholder="Введите название квиза" formControlName="name">
-  </div>
-  <div class="form-control">
-    <label for="description" formControlName="description">Описание</label>
-    <input id="description" type="text" placeholder="Введите Описание квиза">
-  </div>
-  <button (click)="createQuestionBlock()">Создать вопрос</button>
-  <button>Сохранить</button>
-</form>
