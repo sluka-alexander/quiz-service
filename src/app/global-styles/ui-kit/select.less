@@ -1,0 +1,51 @@
+.ng-select {
+  .size(48px, 100%);
+  .font-style(400, 14px, 20px);
+
+  box-sizing: border-box;
+  max-width: 400px;
+  padding: 0 0 0 20px;
+  border: 1px solid @gray-30;
+  border-radius: 10px;
+  transition: 0.2s;
+
+  &:hover {
+    border-color: @main-brand-color-light;
+  }
+}
+
+.ng-select-container {
+  .size(100%);
+}
+
+.ng-select.ng-select-single .ng-select-container .ng-value-container {
+  display: flex;
+  align-items: center;
+}
+
+.ng-clear-wrapper {
+  display: none;
+}
+
+.ng-arrow-wrapper {
+  .flex-center();
+  .size(48px);
+}
+
+.ng-select .ng-select-container .ng-arrow-wrapper .ng-arrow {
+  .flex-center();
+  .size(24px);
+
+  font-size: 20px;
+  transition: 0.3s;
+
+  &:before {
+    .fontello-icon('\e832');
+
+    color: black;
+  }
+}
+
+.ng-select.ng-select-opened>.ng-select-container .ng-arrow {
+  transform: rotate(-180deg);
+}

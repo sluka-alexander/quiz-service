@@ -1,0 +1,158 @@
+.button {
+  .flex-center();
+  .text-sm-medium();
+
+  padding: 9px 20px;
+  width: fit-content;
+  transition: 0.3s;
+  cursor: pointer;
+  border-radius: @border-radius;
+  box-shadow: @shadow-3xl;
+
+  &:active {
+    //transform: scale(0.9);
+  }
+
+  &--primary {
+    color: @white;
+    background-color: @brand-500;
+    border: 1px solid @brand-500;
+
+    &:hover {
+      background-color: @brand-600;
+      border: 1px solid @brand-600;
+    }
+
+    &:active {
+      background-color: @brand-500;
+      border: 1px solid @brand-500;
+      box-shadow: 0 0 0 3px @brand-100;
+    }
+  }
+
+  &--red {
+    color: @white;
+    background-color: @red-500;
+    border: 1px solid @red-500;
+
+    &:hover {
+      background-color: @red-400;
+      border-color: @red-400;
+    }
+
+    &:active {
+      background-color: @red-500;
+    }
+  }
+
+  &--black {
+    color: @white;
+    background-color: @gray-900;
+    border: 1px solid @gray-900;
+
+    &:hover {
+      background-color: @gray-800;
+      border-color: @gray-800;
+    }
+
+    &:active {
+      background-color: @gray-900;
+    }
+  }
+
+  &--outline {
+    color: @black;
+    background-color: @white;
+    border: 1px solid @gray-30;
+
+    &:hover {
+      background-color: @gray-20;
+    }
+
+    &:active {
+      background-color: @gray-30;
+    }
+  }
+
+  &--small {
+    height: 28px;
+    padding: 0 12px;
+    min-width: 100px;
+    border-radius: 5px;
+  }
+
+  &--square {
+    padding: 5px;
+
+    i {
+      .size(24px);
+    }
+  }
+
+  &--burger {
+    .size(36px);
+
+    i {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+
+      &,
+      &:before,
+      &:after {
+        .size(2px, 20px);
+
+        border-radius: 2px;
+        background-color: @white-500;
+        transition: 0.3s;
+      }
+
+      &:before,
+      &:after {
+        content: '';
+        position: absolute;
+        left: 0;
+      }
+
+      &:before {
+        transform: translateY(6px);
+      }
+
+      &:after {
+        transform: translateY(-6px);
+      }
+    }
+  }
+
+  &--burger-active {
+  i {
+    background: transparent;
+
+    &:before {
+      transform: rotate(45deg);
+    }
+
+    &:after {
+      transform: rotate(-45deg);
+    }
+  }
+  }
+
+  &:disabled {
+    color: @brand-200;
+    border: 1px solid @brand-100;
+    background-color: @brand-100;
+    box-shadow: none;
+    cursor: not-allowed;
+
+    &:hover,
+    &:active {
+      color: @brand-200;
+      border: 1px solid @brand-100;
+      background-color: @brand-100;
+      transform: none;
+    }
+  }
+}

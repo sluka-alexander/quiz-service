@@ -1,0 +1,28 @@
+@small-mobile-breakpoint: 575px;
+@mobile-breakpoint: 767px;
+@tablet-breakpoint: 1023px;
+@desktop-breakpoint: 1199px;
+
+.small-mobile(@ruleset) {
+  @media screen and (max-width: @small-mobile-breakpoint) {
+    @ruleset();
+  }
+}
+
+.mobile(@ruleset) {
+  @media screen and (max-width: @mobile-breakpoint) {
+    @ruleset();
+  }
+}
+
+.tablet(@ruleset) {
+  @media screen and (max-width: @tablet-breakpoint) {
+    @ruleset();
+  }
+}
+
+.desktop(@ruleset) {
+  @media screen and (max-width: @desktop-breakpoint) {
+    @ruleset();
+  }
+}

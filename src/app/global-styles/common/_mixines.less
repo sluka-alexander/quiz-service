@@ -1,0 +1,277 @@
+// --------------------- FONTS MIXINS --------------------- //
+
+.font-style(@weight, @size, @height, @family : @font-family-main) {
+  font-family: @family;
+  font-size: @size;
+  font-weight: @weight;
+  line-height: @height;
+}
+
+.display-2xl-light() {
+  .font-style(300, 72px, 90px, @font-family-additional);
+}
+
+.display-2xl-regular() {
+  .font-style(400, 72px, 90px, @font-family-additional);
+}
+
+.display-2xl-medium() {
+  .font-style(500, 72px, 90px, @font-family-additional);
+}
+
+.display-2xl-bold() {
+  .font-style(700, 72px, 90px, @font-family-additional);
+}
+
+
+.display-xl-light() {
+  .font-style(300, 60px, 72px, @font-family-additional);
+}
+
+.display-xl-regular() {
+  .font-style(400, 60px, 72px, @font-family-additional);
+}
+
+.display-xl-medium() {
+  .font-style(500, 60px, 72px, @font-family-additional);
+}
+
+.display-xl-bold() {
+  .font-style(700, 60px, 72px, @font-family-additional);
+}
+
+
+.display-lg-light() {
+  .font-style(300, 48px, 60px, @font-family-additional);
+}
+
+.display-lg-regular() {
+  .font-style(400, 48px, 60px, @font-family-additional);
+}
+
+.display-lg-medium() {
+  .font-style(500, 48px, 60px, @font-family-additional);
+}
+
+.display-lg-bold() {
+  .font-style(700, 48px, 60px, @font-family-additional);
+}
+
+
+.display-md-light() {
+  .font-style(300, 33px, 44px, @font-family-additional);
+}
+
+.display-md-regular() {
+  .font-style(400, 33px, 44px, @font-family-additional);
+}
+
+.display-md-medium() {
+  .font-style(500, 33px, 44px, @font-family-additional);
+}
+
+.display-md-bold() {
+  .font-style(700, 33px, 44px, @font-family-additional);
+}
+
+
+.display-sm-light() {
+  .font-style(300, 30px, 38px, @font-family-additional);
+}
+
+.display-sm-regular() {
+  .font-style(400, 30px, 38px, @font-family-additional);
+}
+
+.display-sm-medium() {
+  .font-style(500, 30px, 38px, @font-family-additional);
+}
+
+.display-sm-bold() {
+  .font-style(700, 30px, 38px, @font-family-additional);
+}
+
+
+.display-xs-light() {
+  .font-style(300, 24px, 32px, @font-family-additional);
+}
+
+.display-xs-regular() {
+  .font-style(400, 24px, 32px, @font-family-additional);
+}
+
+.display-xs-medium() {
+  .font-style(500, 24px, 32px, @font-family-additional);
+}
+
+.display-xs-bold() {
+  .font-style(700, 24px, 32px, @font-family-additional);
+}
+
+
+.text-xl-light() {
+  .font-style(300, 20px, 30px, @font-family-main);
+}
+
+.text-xl-regular() {
+  .font-style(400, 20px, 30px, @font-family-main);
+}
+
+.text-xl-medium() {
+  .font-style(500, 20px, 30px, @font-family-main);
+}
+
+.text-xl-bold() {
+  .font-style(700, 20px, 30px, @font-family-main);
+}
+
+
+.text-lg-light() {
+  .font-style(300, 18px, 28px, @font-family-main);
+}
+
+.text-lg-regular() {
+  .font-style(400, 18px, 28px, @font-family-main);
+}
+
+.text-lg-medium() {
+  .font-style(500, 18px, 28px, @font-family-main);
+}
+
+.text-lg-bold() {
+  .font-style(700, 18px, 28px, @font-family-main);
+}
+
+
+.text-md-light() {
+  .font-style(300, 16px, 24px, @font-family-main);
+}
+
+.text-md-regular() {
+  .font-style(400, 16px, 24px, @font-family-main);
+}
+
+.text-md-medium() {
+  .font-style(500, 16px, 24px, @font-family-main);
+}
+
+.text-md-bold() {
+  .font-style(700, 16px, 24px, @font-family-main);
+}
+
+
+.text-sm-light() {
+  .font-style(300, 14px, 20px, @font-family-main);
+}
+
+.text-sm-regular() {
+  .font-style(400, 14px, 20px, @font-family-main);
+}
+
+.text-sm-medium() {
+  .font-style(500, 14px, 20px, @font-family-main);
+}
+
+.text-sm-bold() {
+  .font-style(700, 14px, 20px, @font-family-main);
+}
+
+
+.text-xs-light() {
+  .font-style(300, 12px, 18px, @font-family-main);
+}
+
+.text-xs-regular() {
+  .font-style(400, 12px, 18px, @font-family-main);
+}
+
+.text-xs-medium() {
+  .font-style(500, 12px, 18px, @font-family-main);
+}
+
+.text-xs-bold() {
+  .font-style(700, 12px, 18px, @font-family-main);
+}
+
+
+
+.appearance (@value: none) {
+  -webkit-appearance:     @value;
+  -moz-appearance:        @value;
+  -ms-appearance:         @value;
+  -o-appearance:          @value;
+  appearance:             @value;
+}
+
+.size(@height, @width : @height) {
+  height: @height;
+  width: @width;
+}
+
+.circle() {
+  border-radius: 50%;
+}
+
+.flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.font-face(@font-folder-name, @font-name, @font-weight: normal) {
+  @font-face {
+    font-family: @font-folder-name;
+    font-style: normal;
+    font-display: swap;
+    font-weight: @font-weight;
+    src: local(''),
+    url("../../shared/fonts/@{font-folder-name}/@{font-name}.eot") format("eot"),
+    url("../../shared/fonts/@{font-folder-name}/@{font-name}.woff") format("woff"),
+    url("../../shared/fonts/@{font-folder-name}/@{font-name}.ttf") format("truetype");
+    font-display: swap;
+  }
+}
+
+.fontello-icon(@content) {
+  content: @content;
+  line-height: 1;
+  font-family: "nb-icons-font";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  speak: never;
+}
+
+.margin-component {
+  margin-bottom: 100px;
+}
+
+.margin-block {
+  margin-bottom: 50px;
+}
+
+.margin-block-top {
+  margin-top: 50px;
+}
+
+.margin-element {
+  margin-bottom: 35px;
+}
+
+.margin-content {
+  margin-bottom: 25px;
+}
+
+.text-overflow() {
+  overflow: hidden;
+  display: inline-block;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.text-overflow-multiline(@lines) {
+  display: -webkit-box;
+  -webkit-line-clamp: @lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}

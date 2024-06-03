@@ -1,6 +1,4 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MainLayoutComponent } from './shared/components/main-layout/main-layout.component';
@@ -10,7 +8,12 @@ import { QuizePageComponent } from './shared/components/quize-page/quize-page.co
 import { HomePageComponent } from './shared/components/home-page/home-page.component';
 import { QuizComponent } from './shared/components/quiz/quiz.component';
 import { QuizzesComponent } from './shared/components/quizzes/quizzes.component';
+import {HeaderComponent} from "./shared/components/header/header.component";
+
 import {SharedModule} from "./shared/shared.module";
+import { FormsModule} from "@angular/forms";
+import { BrowserModule } from '@angular/platform-browser';
+import { CommonModule } from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -21,14 +24,20 @@ import {SharedModule} from "./shared/shared.module";
     QuizePageComponent,
     HomePageComponent,
     QuizComponent,
-    QuizzesComponent
+    QuizzesComponent,
+    HeaderComponent
   ],
   imports: [
-    BrowserModule,
     AppRoutingModule,
-    SharedModule
+    FormsModule,
+    SharedModule,
+    BrowserModule,
+    CommonModule
   ],
   providers: [],
+  exports: [
+    HeaderComponent
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
