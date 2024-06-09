@@ -2,17 +2,78 @@
 
 .quiz {
   .text-xl-regular();
+  .spacing-component();
+
+  &__info {
+    .spacing-block();
+  }
 
   &__name {
     .display-sm-bold();
-
+    .spacing-element();
   }
 
   &__description {
+    .spacing-block();
+
     color: @gray-500;
+  }
+
+  &__addition-info {
+    .text-md-light();
   }
 
   &__author {
 
+  }
+
+  &__questions {
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-block;
+  }
+
+  &__question {
+
+  }
+
+  &__question-number-name {
+    .text-lg-bold();
+    .spacing-element();
+  }
+
+  &__question-description {
+    .text-md-medium();
+
+    .spacing-element();
+  }
+
+  &__question-open-clue-button {
+    margin-bottom: @spacing-3;
+  }
+
+  &__question-clue {
+    .text-sm-regular();
+
+    color: @gray-500;
+    margin-bottom: @spacing-3;
+  }
+
+  &__question-answer-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-3;
+  }
+
+  &__label-complete-question {
+    .text-sm-bold();
+
+    position: fixed;
+    bottom: @spacing-5;
+    right: @spacing-5;
+    padding: @spacing-2 @spacing-4;
+    border-radius: 50px;
+    background-color: @green-500;
+    color: @white;
   }
 }

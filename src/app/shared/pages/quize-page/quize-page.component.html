@@ -1,12 +1,16 @@
 <div class="quiz container">
-  <div class="quiz__name">{{ quiz.name }}</div>
-  <div class="quiz__description">{{ quiz.description }}</div>
-  <div class="quiz__author">Автор: {{ quiz.author }}</div>
-  <div class="quiz__counter-question">Количество вопросов: {{ quiz.questions.length }}</div>
+  <div class="quiz__info">
+    <div class="quiz__name">{{ quiz.name }}</div>
+    <div class="quiz__description">{{ quiz.description }}</div>
+    <div class="quiz__addition-info">
+      <div class="quiz__author ">Автор: {{ quiz.author }}</div>
+      <div class="quiz__counter-question">Количество вопросов: {{ quiz.questions.length }}</div>
+    </div>
+  </div>
 
   <div class="quiz__questions">
     <div *ngFor="let question of quiz.questions; let idx=index" class="quiz__question">
-      <div class="quiz__question-number-name">Вопрос  №{{ idx }}</div>
+      <div class="quiz__question-number-name">Вопрос  №{{ idx + 1 }}</div>
       <div class="quiz__question-description">{{ question.description }}</div>
       <div *ngIf="question.clue" class="quiz__question-open-clue-button button button--black button--small" (click)="question.isOpenClue =!question.isOpenClue">Получить подсказку</div>
       <div *ngIf="question.isOpenClue" class="quiz__question-clue">{{ question.clue }}</div>
@@ -14,7 +18,8 @@
         <input [disabled]="question.isComplete"
                [class]="question.isComplete ? 'input--success' :''"
                type="text" placeholder="Введите ответ"
-               [(ngModel)]="question.userOption">
+               [(ngModel)]="question.userOption"
+               (keyup.enter)="checkAnswer(idx)">
         {{ question.userAnswer }}
         <button [disabled]="!question.userOption || question.isComplete" class="quiz__question-check-answer button button--primary" (click)="checkAnswer(idx)">Проверить ответ</button>
       </div>
@@ -23,5 +28,8 @@
 
   <div class="quiz__label-complete-question">
     Вопросы: {{ counterCompletedQuestion }} Из {{ quiz.questions.length }}
+  </div>
+  <div class="quiz__win-dialog">
+
   </div>
 </div>

@@ -13,6 +13,7 @@ export class QuizePageComponent implements OnInit {
 
   quiz: any;
   counterCompletedQuestion: number = 0;
+  countersMistake: number = 0;
 
   constructor(
     private quizService: QuizService,
@@ -54,6 +55,9 @@ export class QuizePageComponent implements OnInit {
     if (this.quiz.questions[id].answer.trim().toLowerCase().toString() === this.quiz.questions[id].userOption.trim().toLowerCase().toString()) {
       this.quiz.questions[id].isComplete = true;
       this.counterCompletedQuestion++;
+    }
+    else {
+      this.countersMistake++;
     }
   }
 
