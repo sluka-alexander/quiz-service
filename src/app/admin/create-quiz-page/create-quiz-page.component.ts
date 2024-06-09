@@ -56,6 +56,7 @@ export class CreateQuizPageComponent implements OnInit {
     const quiz: Quiz = {
       name: this.form.value.name,
       description: this.form.value.description,
+      author: this.form.value.author,
       questions: this.questions
     }
 

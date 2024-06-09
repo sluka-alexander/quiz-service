@@ -1,0 +1,16 @@
+<div class="container">
+  <div
+    *ngIf="quizzez$ | async as quizzez; else loading"
+    class="quizzes">
+    <app-quiz
+      *ngFor="let quiz of quizzez"
+      [quiz]="quiz"
+    ></app-quiz>
+  </div>
+  <ng-template #loading>
+    Загрука...
+  </ng-template>
+</div>
+
+
+
