@@ -12,7 +12,8 @@ export interface FbAuthResponse {
 export interface Quiz {
   name: string,
   description?: string,
-  idQuiz?: string,
+  author?: string
+  id?: string,
   questions: [Question]
 }
 

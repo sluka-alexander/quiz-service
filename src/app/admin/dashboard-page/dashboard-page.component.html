@@ -1,1 +1,24 @@
-<p>dashboard-page works!</p>
+<div class="quizzes container">
+  <div class="quizzes__title">Квизы</div>
+  <div class="quizzes__search">
+    <input type="text" name="search" placeholder="Введите название квеста..." [(ngModel)]="searchStr">
+  </div>
+  <div  *ngIf="quizzes.length; else loading"  class="quizzes__wrapper">
+    <div *ngFor="let quiz of quizzes | SearchQuiz:searchStr; let idx = index" class="quizzes__quiz">
+      <div class="quizzes__quiz-bottom-part">
+        <div class="quizzes__quiz-name">{{ quiz.name }}</div>
+        <div class="quizzes__quiz-description">{{ quiz.description }}</div>
+      </div>
+      <div class="quizzes__quiz-bottom-part">
+        <div class="quizzes__quiz-author">Автор: {{ quiz.author }}</div>
+        <div class="quizzes__quiz-length-questions">Вопросов: {{ quiz.questions.length }}</div>
+        <div class="quizzes__quiz-buttons">
+          <div class="button button--primary" [routerLink]="['/admin', 'quiz', quiz.id, 'edit']">Открыть</div>
+          <div class="button button--red" (click)="removeQuiz(quiz.id)">Удалить</div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <ng-template #loading>Идет загрузка...</ng-template>
+</div>
+

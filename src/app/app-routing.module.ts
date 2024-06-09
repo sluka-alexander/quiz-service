@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import {PreloadAllModules, PreloadingStrategy, RouterModule, Routes} from '@angular/router';
 import {MainLayoutComponent} from "./shared/components/main-layout/main-layout.component";
-import {HomePageComponent} from "./shared/components/home-page/home-page.component";
-import {QuizePageComponent} from "./shared/components/quize-page/quize-page.component";
+import {HomePageComponent} from "./shared/pages/home-page/home-page.component";
+import {QuizePageComponent} from "./shared/pages/quize-page/quize-page.component";
 
 const routes: Routes = [
   {

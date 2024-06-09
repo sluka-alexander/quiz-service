@@ -10,6 +10,7 @@ import {AuthService} from "./services/auth.service";
 import {SharedModule} from "../shared/shared.module";
 import {AuthGuard} from "./services/auth.guard";
 import { CommonModule } from "@angular/common";
+import {SearchPipe} from "./shared/pipes/search.pipe";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { CommonModule } from "@angular/common";
     LoginPageComponent,
     DashboardPageComponent,
     CreateQuizPageComponent,
-    EditQuizPageComponent
+    EditQuizPageComponent,
+    SearchPipe
   ],
   imports: [
     FormsModule,

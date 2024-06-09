@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import {Quiz} from "../../interfaces";
 
 @Component({
   selector: 'app-quiz',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./quiz.component.less']
 })
 export class QuizComponent implements OnInit {
+
+  @Input() quiz: Quiz
 
   constructor() { }
 
