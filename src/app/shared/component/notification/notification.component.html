@@ -1,0 +1,11 @@
+<div *ngIf="text"
+     class="notification"
+     [ngClass]="{
+        'notification--success' : type === 'success',
+        'notification--warning' : type === 'warning',
+        'notification--error' : type === 'error'
+       }">
+  <div class="notification__wrapper">
+    {{ text }}
+  </div>
+</div>

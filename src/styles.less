@@ -81,3 +81,10 @@ h5,
 p {
   margin: 0;
 }
+
+html,
+body {
+  &:has(.quiz__win-dialog) {
+    overflow: hidden;
+  }
+}
