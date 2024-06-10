@@ -17,7 +17,7 @@
       <div class="quiz__question-answer-input-wrapper">
         <input [disabled]="question.isComplete"
                [class]="question.isComplete ? 'input--success' :''"
-               type="text" placeholder="Введите ответ"
+               type="text" placeholder="Введите ответ..."
                [(ngModel)]="question.userOption"
                (keyup.enter)="checkAnswer(idx)">
         {{ question.userAnswer }}
@@ -29,7 +29,18 @@
   <div class="quiz__label-complete-question">
     Вопросы: {{ counterCompletedQuestion }} Из {{ quiz.questions.length }}
   </div>
-  <div class="quiz__win-dialog">
-
+  <div *ngIf="isWin" class="quiz__win-dialog">
+    <div class="quiz__win-dialog-content">
+      <iframe src="https://giphy.com/embed/jJQC2puVZpTMO4vUs0" width="200px" height="200px" style="" frameBorder="0" class="giphy-embed" allowFullScreen></iframe>
+      <div class="quiz__win-dialog-title">
+        Поздравляю, Вы выиграли!
+      </div>
+      <div class="quiz__win-dialog-mistakes">
+        Количество ошибок: {{ countersMistake }}
+      </div>
+      <div class="quiz__win-dialog-additional-text">
+        Сделайте скрин, чтобы похвастаться :)
+      </div>
+    </div>
   </div>
 </div>

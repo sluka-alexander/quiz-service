@@ -76,4 +76,42 @@
     background-color: @green-500;
     color: @white;
   }
+
+  &__win-dialog {
+    .size(100dvh, 100dvw);
+    .flex-center();
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: @black-500-opacity-30;
+    padding: @spacing-5;
+  }
+
+  &__win-dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 430px;
+    background-color: @white;
+    padding: @spacing-5;
+    border-radius: @border-radius;
+    text-align: center;
+  }
+
+  &__win-dialog-title {
+    .display-xs-bold();
+
+    margin-bottom: @spacing-4;
+  }
+
+  &__win-dialog-mistakes {
+    .text-lg-bold();
+
+    margin-bottom: @spacing-4;
+  }
+
+  &__win-dialog-additional-text {
+    .text-xl-light();
+  }
 }

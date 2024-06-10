@@ -22,3 +22,10 @@ export interface Question {
   answer: string
   clue?: string,
 }
+
+export type NotificationType = 'success' | 'warning' | 'error';
+export interface Notification {
+  type: NotificationType,
+  text: string,
+  delay?: number
+}
