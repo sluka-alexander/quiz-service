@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Question, Quiz} from "../../shared/interfaces";
 import {QuizService} from "../../shared/quiz.service";
@@ -10,13 +10,13 @@ import {NotificationService} from "../../shared/services/notification.service";
   styleUrls: ['./create-quiz-page.component.less']
 })
 export class CreateQuizPageComponent implements OnInit {
+  @ViewChildren('questionDescription') questionDescription: QueryList<ElementRef>;
 
   form: FormGroup;
   formCreateQuestion: FormGroup;
   questions: [Question];
   name: string;
   desc: string;
-
 
   constructor(
     private quizService: QuizService,
@@ -52,6 +52,11 @@ export class CreateQuizPageComponent implements OnInit {
       clue: '',
       explanation: ''
     });
+
+
+    setTimeout(()=> {
+      this.questionDescription.toArray()[this.questions.length - 1].nativeElement.focus();
+    }, 0);
   }
 
   submit() {

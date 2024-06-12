@@ -31,7 +31,7 @@
             <label class="form__group-label">Вопрос № {{idx + 1}} </label>
             <button class="button button--red button--small" (click)="removeQuestion(idx)">Удалить вопрос</button>
           </div>
-          <textarea [ngModelOptions]="{standalone: true}" class="create-question__description" placeholder="Введите вопрос" [(ngModel)]="questions[idx].description"></textarea>
+          <textarea #questionDescription [ngModelOptions]="{standalone: true}" class="create-question__description" placeholder="Введите вопрос" [(ngModel)]="questions[idx].description"></textarea>
         </div>
         <div class="form__control" >
           <input type="text" [ngModelOptions]="{standalone: true}" placeholder="Введите ответ" [(ngModel)]="questions[idx].answer">
@@ -44,8 +44,8 @@
         </div>
       </div>
     </div>
-    <div class="form__buttons">
-      <button class="button button--black button--small" (click)="createQuestionBlock()">Добавить вопрос</button>
+    <div class="form__buttons form__buttons--create-quiz">
+      <button class="button button--black" (click)="createQuestionBlock()">Добавить вопрос</button>
       <button (click)="submit()"
               class="button button--primary"
               [disabled]="form.invalid">Сохранить</button>

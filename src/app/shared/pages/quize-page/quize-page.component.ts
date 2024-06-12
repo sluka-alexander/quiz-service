@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import {QuizService} from "../../quiz.service";
 import {ActivatedRoute, Params} from '@angular/router'
 import {Quiz} from "../../interfaces";
@@ -11,6 +11,7 @@ import {NotificationService} from "../../services/notification.service";
   styleUrls: ['./quize-page.component.less']
 })
 export class QuizePageComponent implements OnInit {
+  @ViewChildren('answer') answer: QueryList<ElementRef>;
 
   quiz: any;
   counterCompletedQuestion: number = 0;
@@ -78,12 +79,14 @@ export class QuizePageComponent implements OnInit {
   }
 
   redirectUncompletedQuestion() {
-    // const notCompletedInputs = this.quiz.questions.filter((question: { isComplete: boolean; }) => {
-    //   return !question.isComplete;
-    // });
-    //
-    // if (notCompletedInputs.length) {
-    //   notCompletedInputs[0].userOption.focus();
-    // }
+    let isCompletedQuestion: boolean = false;
+
+    this.answer.toArray().forEach(answer => {
+
+      if (answer.nativeElement.getAttribute('ng-reflect-is-disabled') === 'false' && !isCompletedQuestion) {
+        answer.nativeElement.focus();
+        isCompletedQuestion = true;
+      }
+    });
   }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import {QuizService} from "../../shared/quiz.service";
 import {ActivatedRoute, Params} from '@angular/router'
 import {Question, Quiz} from "../../shared/interfaces";
@@ -12,6 +12,8 @@ import {NotificationService} from "../../shared/services/notification.service";
   styleUrls: ['./edit-quiz-page.component.less']
 })
 export class EditQuizPageComponent implements OnInit {
+  @ViewChildren('questionDescription') questionDescription: QueryList<ElementRef>;
+
   changeQuestForm: FormGroup
   questions: [Question]
   id: string | undefined = ''
@@ -55,11 +57,19 @@ export class EditQuizPageComponent implements OnInit {
       answer: '',
       clue: '',
       explanation: ''
-    })
+    });
+
+    setTimeout(()=> {
+      this.questionDescription.toArray()[this.questions.length - 1].nativeElement.focus();
+    }, 0);
   }
 
   removeQuestion(index: any) {
-    this.questions.splice(index, 1);
+    let isConfirmRemove = confirm("Вы уверены, что хотите удалить?");
+
+    if (isConfirmRemove) {
+      this.questions.splice(index, 1);
+    }
   }
 
   submit() {
