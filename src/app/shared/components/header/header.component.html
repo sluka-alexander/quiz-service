@@ -12,10 +12,9 @@
         <button [class.button--burger-active]="isOpenHeaderMenu" class="button button--square button--primary button--burger" (click)="openHeaderMenu()">
           <i class="icon-burger"></i>
         </button>
-        <ul *ngIf="isOpenHeaderMenu">
-          <li>FAQ</li>
-          <li>Правила</li>
-          <li>Войти</li>
+        <ul *ngIf="isOpenHeaderMenu" class="dropdown-list">
+          <li routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/']" class="dropdown-list__option" (click)="isOpenHeaderMenu = false">Главная</li>
+          <li routerLinkActive="link-active" [routerLinkActiveOptions]="{exact: true}" [routerLink]="['/rules']" class="dropdown-list__option" (click)="isOpenHeaderMenu = false">Правила</li>
         </ul>
       </div>
     </div>

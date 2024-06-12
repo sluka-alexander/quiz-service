@@ -21,6 +21,7 @@ export interface Question {
   description: string,
   answer: string
   clue?: string,
+  explanation?: string
 }
 
 export type NotificationType = 'success' | 'warning' | 'error';

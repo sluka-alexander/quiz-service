@@ -1,0 +1,25 @@
+.dropdown-list {
+  .text-sm-medium();
+
+  list-style-type: none;
+
+  margin: 0;
+  padding: 0;
+  color: @gray-700;
+  border-radius: @border-radius;
+  box-shadow: @shadow-xl;
+  background-color: @white-500;
+  border: 1px solid @gray-200;
+
+  &__option {
+    padding: @spacing-2 @spacing-4;
+
+    &:hover {
+      background-color: @gray-100;
+    }
+
+    &.link-active {
+      color: @brand-500;
+    }
+  }
+}

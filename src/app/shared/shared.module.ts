@@ -4,6 +4,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { CommonModule } from "@angular/common";
 import { NotificationComponent } from './component/notification/notification.component';
 import {NotificationService} from "./services/notification.service";
+import { RulesPageComponent } from './pages/rules-page/rules-page.component';
 
 @NgModule({
   imports: [
@@ -16,7 +17,8 @@ import {NotificationService} from "./services/notification.service";
     NotificationComponent,
   ],
   declarations: [
-    NotificationComponent
+    NotificationComponent,
+    RulesPageComponent
   ],
   providers: [
     NotificationService

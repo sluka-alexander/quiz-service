@@ -1,0 +1,35 @@
+@import "src/app/global-styles/action.less";
+
+.quiz {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  width: 100%;
+  padding: 20px;
+  border: 1px solid @gray-200;
+  border-radius: @border-radius;
+
+  &__name {
+    .text-lg-bold();
+  }
+
+  &__author-questions-wrapper {
+    display: flex;
+    gap: 30px;
+  }
+
+  &__quiz-author {
+    .text-sm-regular();
+  }
+
+  &__length-questions {
+    .text-sm-regular();
+  }
+
+  &__buttons {
+    margin-top: 12px;
+    display: flex;
+    gap: 12px;
+  }
+}

@@ -49,7 +49,7 @@ import {SearchPipe} from "./shared/pipes/search.pipe";
     ]),
   ],
   exports: [RouterModule],
-  providers: [AuthService, AuthGuard]
+  providers: [AuthGuard]
 })
 export class AdminModule {
 

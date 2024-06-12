@@ -67,6 +67,10 @@ i,
     max-width: calc(@container-sm + (2 * @container-spacing-mobile));
     padding: 0 @container-spacing-mobile;
   });
+
+  &--spacing-bottom {
+    .spacing-component();
+  }
 }
 
 div {
@@ -87,4 +91,8 @@ body {
   &:has(.quiz__win-dialog) {
     overflow: hidden;
   }
+}
+
+.bold {
+  font-weight: 700;
 }

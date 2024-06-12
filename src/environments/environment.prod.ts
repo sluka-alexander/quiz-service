@@ -1,5 +1,5 @@
 export const environment = {
   production: true,
-  apiKey: 'AIzaSyA1THIQeDJiQ3RSyG_BoU79vLHbj-TCTds',
-  fbDBUrl: 'https://quiz-art-minsk-default-rtdb.firebaseio.com/'
+  apiKey: 'AIzaSyDc3wTfa4Q8NQLZ7KlgNTsAPCkEojrMG3E',
+  fbDBUrl: 'https://quizduck-service-default-rtdb.europe-west1.firebasedatabase.app'
 };

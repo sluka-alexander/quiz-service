@@ -4,6 +4,7 @@ import {ActivatedRoute, Params} from '@angular/router'
 import {Question, Quiz} from "../../shared/interfaces";
 import {FormGroup, FormControl, Validators} from "@angular/forms";
 import {switchMap} from "rxjs/operators"
+import {NotificationService} from "../../shared/services/notification.service";
 
 @Component({
   selector: 'app-edit-quiz-page',
@@ -17,12 +18,14 @@ export class EditQuizPageComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private quizService: QuizService
+    private quizService: QuizService,
+    private notificationService: NotificationService
   ) {
     this.questions = [{
       description: '',
       answer: '',
       clue: '',
+      explanation: ''
     }]
   }
 
@@ -51,6 +54,7 @@ export class EditQuizPageComponent implements OnInit {
       description: '',
       answer: '',
       clue: '',
+      explanation: ''
     })
   }
 
@@ -72,7 +76,7 @@ export class EditQuizPageComponent implements OnInit {
     }
 
     this.quizService.update(quiz).subscribe( ()=> {
-
+      this.notificationService.success('Пост успешно изменен!');
     })
   }
 }

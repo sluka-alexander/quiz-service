@@ -73,8 +73,9 @@
     right: @spacing-5;
     padding: @spacing-2 @spacing-4;
     border-radius: 50px;
-    background-color: @green-500;
-    color: @white;
+    background-color: @green-100;
+    color: @green-600;
+    max-width: 360px;
   }
 
   &__win-dialog {
@@ -97,6 +98,10 @@
     padding: @spacing-5;
     border-radius: @border-radius;
     text-align: center;
+
+    iframe {
+      pointer-events: none;
+    }
   }
 
   &__win-dialog-title {
@@ -113,5 +118,41 @@
 
   &__win-dialog-additional-text {
     .text-xl-light();
+
+    margin-bottom: @spacing-4;
+  }
+
+  &__question-explanation {
+    .text-xs-regular();
+
+    padding: @spacing-3;
+    width: 100%;
+    max-width: 360px;
+    background-color: @gray-100;
+    color: @gray-600;
+    border-radius: @border-radius;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  max-width: 360px;
+
+  &:has(.input--success) {
+    &:after {
+      .size(24px);
+
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: @spacing-2;
+      background-image: url("src/app/shared/images/icon-circle-check.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      filter: invert(64%) sepia(80%) saturate(442%) hue-rotate(71deg) brightness(97%) contrast(87%);
+      transform: translateY(-50%);
+    }
   }
 }

@@ -46,6 +46,7 @@ export class QuizePageComponent implements OnInit {
           description: question.description,
           answer: question.answer,
           clue: question.clue,
+          explanation: question.explanation,
           isOpenClue: false,
           isComplete: false,
           userOption: ''
@@ -74,5 +75,15 @@ export class QuizePageComponent implements OnInit {
     if (this.counterCompletedQuestion === this.quiz.questions.length) {
       this.isWin = true;
     }
+  }
+
+  redirectUncompletedQuestion() {
+    // const notCompletedInputs = this.quiz.questions.filter((question: { isComplete: boolean; }) => {
+    //   return !question.isComplete;
+    // });
+    //
+    // if (notCompletedInputs.length) {
+    //   notCompletedInputs[0].userOption.focus();
+    // }
   }
 }

@@ -7,15 +7,15 @@ import {Notification} from "../interfaces";
 export class NotificationService {
   public notification$ = new Subject<Notification>()
 
-  success(text: string, delay?: number) {
+  success(text: string, delay: number = 3000) {
     this.notification$.next({type: 'success', text, delay})
   }
 
-  warning(text: string, delay?: number) {
+  warning(text: string, delay: number = 3000) {
     this.notification$.next({type: 'warning', text, delay})
   }
 
-  error(text: string, delay?: number) {
+  error(text: string, delay: number = 3000) {
     this.notification$.next({type: 'error', text, delay})
   }
 }

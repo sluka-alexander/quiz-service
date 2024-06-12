@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {FormArray, FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Question, Quiz} from "../../shared/interfaces";
 import {QuizService} from "../../shared/quiz.service";
+import {NotificationService} from "../../shared/services/notification.service";
 
 @Component({
   selector: 'app-create-quiz-page',
@@ -17,11 +18,15 @@ export class CreateQuizPageComponent implements OnInit {
   desc: string;
 
 
-  constructor(private quizService: QuizService, private fb: FormBuilder) {
+  constructor(
+    private quizService: QuizService,
+    private fb: FormBuilder,
+    private notificationService: NotificationService) {
     this.questions = [{
       description: '',
       answer: '',
       clue: '',
+      explanation: ''
     }]
     this.name = '';
     this.desc = '';
@@ -45,7 +50,8 @@ export class CreateQuizPageComponent implements OnInit {
       description: '',
       answer: '',
       clue: '',
-    })
+      explanation: ''
+    });
   }
 
   submit() {
@@ -62,6 +68,13 @@ export class CreateQuizPageComponent implements OnInit {
 
     this.quizService.create(quiz).subscribe( ()=> {
       this.form.reset();
+      this.questions = [{
+        description: '',
+        answer: '',
+        clue: '',
+        explanation: ''
+      }];
+      this.notificationService.success('Пост успешно создан!');
     })
   }
 

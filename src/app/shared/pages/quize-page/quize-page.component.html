@@ -3,8 +3,8 @@
     <div class="quiz__name">{{ quiz.name }}</div>
     <div class="quiz__description">{{ quiz.description }}</div>
     <div class="quiz__addition-info">
-      <div class="quiz__author ">Автор: {{ quiz.author }}</div>
-      <div class="quiz__counter-question">Количество вопросов: {{ quiz.questions.length }}</div>
+      <div class="quiz__author ">Автор: <span class="bold">{{ quiz.author }}</span></div>
+      <div class="quiz__counter-question">Количество вопросов: <span class="bold">{{ quiz.questions.length }}</span></div>
     </div>
   </div>
 
@@ -15,18 +15,23 @@
       <div *ngIf="question.clue" class="quiz__question-open-clue-button button button--black button--small" (click)="question.isOpenClue =!question.isOpenClue">Получить подсказку</div>
       <div *ngIf="question.isOpenClue" class="quiz__question-clue">{{ question.clue }}</div>
       <div class="quiz__question-answer-input-wrapper">
-        <input [disabled]="question.isComplete"
-               [class]="question.isComplete ? 'input--success' :''"
-               type="text" placeholder="Введите ответ..."
-               [(ngModel)]="question.userOption"
-               (keyup.enter)="checkAnswer(idx)">
-        {{ question.userAnswer }}
-        <button [disabled]="!question.userOption || question.isComplete" class="quiz__question-check-answer button button--primary" (click)="checkAnswer(idx)">Проверить ответ</button>
+        <div class="quiz__question-input-wrapper">
+          <div class="input-wrapper">
+            <input [disabled]="question.isComplete"
+                   [class]="question.isComplete ? 'input--success' :''"
+                   type="text" placeholder="Введите ответ..."
+                   [(ngModel)]="question.userOption"
+                   (keyup.enter)="checkAnswer(idx)">
+            {{ question.userAnswer }}
+          </div>
+        </div>
+        <button [disabled]="!question.userOption || question.isComplete" class="quiz__question-check-answer button button--primary button--full-width" (click)="checkAnswer(idx)">Проверить ответ</button>
+        <div *ngIf="question.isComplete && question.explanation" class="quiz__question-explanation">{{ question.explanation }}</div>
       </div>
     </div>
   </div>
 
-  <div class="quiz__label-complete-question">
+  <div class="quiz__label-complete-question" (click)="redirectUncompletedQuestion()">
     Вопросы: {{ counterCompletedQuestion }} Из {{ quiz.questions.length }}
   </div>
   <div *ngIf="isWin" class="quiz__win-dialog">
@@ -41,6 +46,7 @@
       <div class="quiz__win-dialog-additional-text">
         Сделайте скрин, чтобы похвастаться :)
       </div>
+      <button class="button button--black" (click)="isWin = false">Закрыть</button>
     </div>
   </div>
 </div>
