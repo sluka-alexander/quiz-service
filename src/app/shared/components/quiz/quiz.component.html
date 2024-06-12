@@ -1,7 +1,14 @@
 <div class="quiz">
-  <div class="quiz__name">{{ quiz.name }}</div>
-  <div class="quiz__description">{{ quiz.description }}</div>
-  <button
-    [routerLink]="['/quiz', quiz.id]"
-    class="quiz__open-button">Открыть квиз</button>
+  <div class="quiz__bottom-part">
+    <div class="quiz__name">{{ quiz.name }}</div>
+    <div class="quiz__description">{{ quiz.description }}</div>
+  </div>
+  <div class="quiz__bottom-part">
+    <div class="quiz__author">Автор: {{ quiz.author }}</div>
+    <div class="quiz__length-questions">Вопросов: {{ quiz.questions.length }}</div>
+    <div class="quiz__buttons">
+      <button [routerLink]="['/quiz', quiz.id]"
+        class="button button--primary">Открыть квиз</button>
+    </div>
+  </div>
 </div>

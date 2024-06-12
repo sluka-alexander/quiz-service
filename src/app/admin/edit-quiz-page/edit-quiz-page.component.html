@@ -1,4 +1,4 @@
-<div class="edit-quiz-page container">
+<div class="edit-quiz-page">
     <form class="form form--center form--create-quiz" [formGroup]="changeQuestForm">
         <div class="form__title">Изменить квиз</div>
         <div class="form__wrapper">
@@ -38,6 +38,9 @@
                 </div>
                 <div class="form__control" >
                     <textarea [ngModelOptions]="{standalone: true}" placeholder="Введите подсказку" class="create-question__clue" [(ngModel)]="questions[idx].clue"></textarea>
+                </div>
+                <div class="form__control" >
+                  <textarea [ngModelOptions]="{standalone: true}" placeholder="Введите объяснение" class="create-question__explanation" [(ngModel)]="questions[idx].explanation"></textarea>
                 </div>
             </div>
         </div>

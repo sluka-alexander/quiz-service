@@ -1,16 +1,15 @@
 <div class="container">
-  <div
-    *ngIf="quizzez$ | async as quizzez; else loading"
-    class="quizzes">
-    <app-quiz
-      *ngFor="let quiz of quizzez"
-      [quiz]="quiz"
-    ></app-quiz>
+  <div class="quizzes">
+    <div class="quizzes__title">Квизы</div>
+    <div  *ngIf="quizzez$ | async as quizzez; else loading"  class="quizzes__wrapper">
+      <app-quiz
+        *ngFor="let quiz of quizzez"
+        [quiz]="quiz"
+        class="quizzes__quiz-wrapper"
+      ></app-quiz>
+    </div>
+    <ng-template #loading>Идет загрузка...</ng-template>
   </div>
-  <ng-template #loading>
-    Загрука...
-  </ng-template>
 </div>
-
 
 
