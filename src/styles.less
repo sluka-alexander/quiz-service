@@ -50,23 +50,27 @@ i,
 }
 
 .container {
-  padding: 0 @container-padding;
+  padding: 0 @container-spacing;
   width: 100%;
-  max-width: 1280px;
+  max-width: @container-xl;
   margin: 0 auto;
 
   .desktop({
-    max-width: calc(1024px + (2 * @container-padding));
+    max-width: calc(@container-lg + (2 * @container-spacing));
   });
 
   .tablet({
-    max-width: calc(768px + (2 * @container-padding));
+    max-width: calc(@container-md + (2 * @container-spacing));
   });
 
   .mobile({
-    max-width: calc(525px + (2 * @container-padding));
-    padding: 0 @container-padding-mobile;
+    max-width: calc(@container-sm + (2 * @container-spacing-mobile));
+    padding: 0 @container-spacing-mobile;
   });
+
+  &--spacing-bottom {
+    .spacing-component();
+  }
 }
 
 div {
@@ -80,4 +84,15 @@ h4,
 h5,
 p {
   margin: 0;
+}
+
+html,
+body {
+  &:has(.quiz__win-dialog) {
+    overflow: hidden;
+  }
+}
+
+.bold {
+  font-weight: 700;
 }

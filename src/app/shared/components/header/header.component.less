@@ -1,6 +1,7 @@
 @import "src/app/global-styles/action.less";
 
 .header {
+  .spacing-block();
   padding: 12px 0;
   border-bottom: 1px solid @gray-200;
 
@@ -28,7 +29,15 @@
     .font-style(800, 20px, 24px, @font-family-additional);
   }
 
-  &__action-list {
+  &__actions-list {
+    position: relative;
 
+    .dropdown-list {
+      position: absolute;
+      top: calc(100% + @spacing-1);
+      right: 0;
+      z-index: 1;
+      width: 150px;
+    }
   }
 }

@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import {FormGroup, Validators, FormControl} from "@angular/forms";
 import {User} from "../../../../shared/interfaces";
 import {AuthService} from "../../../services/auth.service";
-import {Router} from "@angular/router";
+import {ActivatedRoute, Router, Params} from "@angular/router";
+import {NotificationService} from "../../../../shared/services/notification.service";
 
 @Component({
   selector: 'app-login-page',
@@ -14,10 +15,20 @@ export class LoginPageComponent implements OnInit {
   form: FormGroup
   submitted: boolean = false
 
-  constructor(private auth: AuthService, private router: Router) {
+  constructor(
+    private auth: AuthService,
+    private router: Router,
+    private route: ActivatedRoute,
+    private notification: NotificationService) {
   }
 
   ngOnInit(): void {
+    this.route.queryParams.subscribe((params: Params) => {
+      if (params['authFailed']) {
+        this.notification.warning('Сессия истекла');
+      }
+    });
+
     this.form = new FormGroup({
       email: new FormControl(null, [Validators.required, Validators.email]),
       password: new FormControl(null, [Validators.required, Validators.minLength(6)]),

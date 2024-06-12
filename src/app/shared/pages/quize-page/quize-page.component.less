@@ -2,17 +2,157 @@
 
 .quiz {
   .text-xl-regular();
+  .spacing-component();
+
+  &__info {
+    .spacing-block();
+  }
 
   &__name {
     .display-sm-bold();
-
+    .spacing-element();
   }
 
   &__description {
+    .spacing-block();
+
     color: @gray-500;
+  }
+
+  &__addition-info {
+    .text-md-light();
   }
 
   &__author {
 
+  }
+
+  &__questions {
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-block;
+  }
+
+  &__question {
+
+  }
+
+  &__question-number-name {
+    .text-lg-bold();
+    .spacing-element();
+  }
+
+  &__question-description {
+    .text-md-medium();
+
+    .spacing-element();
+  }
+
+  &__question-open-clue-button {
+    margin-bottom: @spacing-3;
+  }
+
+  &__question-clue {
+    .text-sm-regular();
+
+    color: @gray-500;
+    margin-bottom: @spacing-3;
+  }
+
+  &__question-answer-input-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: @spacing-3;
+  }
+
+  &__label-complete-question {
+    .text-sm-bold();
+
+    position: fixed;
+    bottom: @spacing-5;
+    right: @spacing-5;
+    padding: @spacing-2 @spacing-4;
+    border-radius: 50px;
+    background-color: @green-100;
+    color: @green-600;
+    max-width: 360px;
+  }
+
+  &__win-dialog {
+    .size(100dvh, 100dvw);
+    .flex-center();
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: @black-500-opacity-30;
+    padding: @spacing-5;
+  }
+
+  &__win-dialog-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 430px;
+    background-color: @white;
+    padding: @spacing-5;
+    border-radius: @border-radius;
+    text-align: center;
+
+    iframe {
+      pointer-events: none;
+    }
+  }
+
+  &__win-dialog-title {
+    .display-xs-bold();
+
+    margin-bottom: @spacing-4;
+  }
+
+  &__win-dialog-mistakes {
+    .text-lg-bold();
+
+    margin-bottom: @spacing-4;
+  }
+
+  &__win-dialog-additional-text {
+    .text-xl-light();
+
+    margin-bottom: @spacing-4;
+  }
+
+  &__question-explanation {
+    .text-xs-regular();
+
+    padding: @spacing-3;
+    width: 100%;
+    max-width: 360px;
+    background-color: @gray-100;
+    color: @gray-600;
+    border-radius: @border-radius;
+  }
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  max-width: 360px;
+
+  &:has(.input--success) {
+    &:after {
+      .size(24px);
+
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: @spacing-2;
+      background-image: url("src/app/shared/images/icon-circle-check.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      filter: invert(64%) sepia(80%) saturate(442%) hue-rotate(71deg) brightness(97%) contrast(87%);
+      transform: translateY(-50%);
+    }
   }
 }

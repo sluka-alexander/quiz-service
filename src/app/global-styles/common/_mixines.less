@@ -193,7 +193,38 @@
   .font-style(700, 12px, 18px, @font-family-main);
 }
 
+// --------------------- SPACING MIXINS --------------------- //
+.spacing-component() {
+  margin-bottom: @spacing-24;
 
+  .mobile({
+    margin-bottom: @spacing-16;
+  });
+}
+
+.spacing-group() {
+  margin-bottom: @spacing-component;
+
+  .mobile({
+    margin-bottom: @spacing-component-mobile;
+  });
+}
+
+.spacing-block() {
+  margin-bottom: @spacing-block;
+
+  .mobile({
+    margin-bottom: @spacing-block-mobile;
+  });
+}
+
+.spacing-element() {
+  margin-bottom: @spacing-element;
+
+  .mobile({
+    margin-bottom: @spacing-element-mobile;
+  });
+}
 
 .appearance (@value: none) {
   -webkit-appearance:     @value;

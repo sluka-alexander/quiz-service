@@ -1,0 +1,96 @@
+@font-face {
+    font-family: 'Unbounded';
+    src: url('Unbounded-Black.eot');
+    src: url('Unbounded-Black.eot?#iefix') format('embedded-opentype'),
+        url('Unbounded-Black.woff2') format('woff2'),
+        url('Unbounded-Black.woff') format('woff'),
+        url('Unbounded-Black.ttf') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('Unbounded-Medium.eot');
+    src: url('Unbounded-Medium.eot?#iefix') format('embedded-opentype'),
+        url('Unbounded-Medium.woff2') format('woff2'),
+        url('Unbounded-Medium.woff') format('woff'),
+        url('Unbounded-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('Unbounded-SemiBold.eot');
+    src: url('Unbounded-SemiBold.eot?#iefix') format('embedded-opentype'),
+        url('Unbounded-SemiBold.woff2') format('woff2'),
+        url('Unbounded-SemiBold.woff') format('woff'),
+        url('Unbounded-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('Unbounded-Regular.eot');
+    src: url('Unbounded-Regular.eot?#iefix') format('embedded-opentype'),
+        url('Unbounded-Regular.woff2') format('woff2'),
+        url('Unbounded-Regular.woff') format('woff'),
+        url('Unbounded-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('Unbounded-Light.eot');
+    src: url('Unbounded-Light.eot?#iefix') format('embedded-opentype'),
+        url('Unbounded-Light.woff2') format('woff2'),
+        url('Unbounded-Light.woff') format('woff'),
+        url('Unbounded-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('Unbounded-Bold.eot');
+    src: url('Unbounded-Bold.eot?#iefix') format('embedded-opentype'),
+        url('Unbounded-Bold.woff2') format('woff2'),
+        url('Unbounded-Bold.woff') format('woff'),
+        url('Unbounded-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('Unbounded-ExtraBold.eot');
+    src: url('Unbounded-ExtraBold.eot?#iefix') format('embedded-opentype'),
+        url('Unbounded-ExtraBold.woff2') format('woff2'),
+        url('Unbounded-ExtraBold.woff') format('woff'),
+        url('Unbounded-ExtraBold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Unbounded';
+    src: url('Unbounded-ExtraLight.eot');
+    src: url('Unbounded-ExtraLight.eot?#iefix') format('embedded-opentype'),
+        url('Unbounded-ExtraLight.woff2') format('woff2'),
+        url('Unbounded-ExtraLight.woff') format('woff'),
+        url('Unbounded-ExtraLight.ttf') format('truetype');
+    font-weight: 200;
+    font-style: normal;
+    font-display: swap;
+}
+
