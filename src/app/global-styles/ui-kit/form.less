@@ -56,6 +56,19 @@
     button {
       width: 100%;
     }
+
+    &--create-quiz {
+      position: fixed;
+      bottom: @spacing-5;
+      right: @spacing-5;
+
+      .mobile({
+        right: 0;
+        flex-direction: row;
+        width: 100dvw;
+        padding: 0 @spacing-5;
+      });
+    }
   }
 
   &__delimiter {

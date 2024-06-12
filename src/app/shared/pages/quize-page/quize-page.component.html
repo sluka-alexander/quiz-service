@@ -17,7 +17,7 @@
       <div class="quiz__question-answer-input-wrapper">
         <div class="quiz__question-input-wrapper">
           <div class="input-wrapper">
-            <input [disabled]="question.isComplete"
+            <input #answer [disabled]="question.isComplete"
                    [class]="question.isComplete ? 'input--success' :''"
                    type="text" placeholder="Введите ответ..."
                    [(ngModel)]="question.userOption"

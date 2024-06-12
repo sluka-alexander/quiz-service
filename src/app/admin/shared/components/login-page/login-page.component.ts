@@ -26,6 +26,10 @@ export class LoginPageComponent implements OnInit {
     this.route.queryParams.subscribe((params: Params) => {
       if (params['authFailed']) {
         this.notification.warning('Сессия истекла');
+      } else if (params['authFailedData']) {
+        this.notification.error('Вы ввели неверные данные');
+        this.form.reset();
+        this.submitted = false;
       }
     });
 

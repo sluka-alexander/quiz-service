@@ -34,6 +34,13 @@ export class AuthInterceptor implements HttpInterceptor {
                     authFailed: true
                   }
                 })
+              } else if(error.status === 400) {
+                this.auth.logout();
+                this.router.navigate(['/admin', 'login'], {
+                  queryParams: {
+                    authFailedData: true
+                  }
+                })
               }
               return throwError(error);
             })
