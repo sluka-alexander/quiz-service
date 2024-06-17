@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChildren, QueryList, ElementRef, ViewChild } from '@angular/core';
 import {QuizService} from "../../shared/quiz.service";
 import {ActivatedRoute, Params} from '@angular/router'
 import {Question, Quiz} from "../../shared/interfaces";
@@ -60,7 +60,7 @@ export class EditQuizPageComponent implements OnInit {
     });
 
     setTimeout(()=> {
-      this.questionDescription.toArray()[this.questions.length - 1].nativeElement.focus();
+      this.questionDescription.toArray()[this.questions.length - 1].nativeElement.scrollIntoView({ behavior: "smooth" });
     }, 0);
   }
 
