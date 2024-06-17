@@ -17,6 +17,8 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 import { environment } from '../environments/environment';
 import {AuthInterceptor} from "./shared/auth.interceptor";
 import {AuthService} from "./admin/services/auth.service";
+// import {AngularFireStorageModule} from "@angular/fire/storage"
+// import {AngularFireModule} from "@angular/fire"
 
 const INTERCEPTOR_PROVIDER: Provider = {
   provide: HTTP_INTERCEPTORS,

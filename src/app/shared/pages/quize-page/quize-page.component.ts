@@ -41,7 +41,7 @@ export class QuizePageComponent implements OnInit {
       this.quiz.name = quiz.name;
       this.quiz.description = quiz.description;
       this.quiz.author = quiz.author;
-      this.quiz.author;
+
       quiz.questions.forEach(question => {
         this.quiz.questions.push({
           description: question.description,
@@ -82,9 +82,8 @@ export class QuizePageComponent implements OnInit {
     let isCompletedQuestion: boolean = false;
 
     this.answer.toArray().forEach(answer => {
-
-      if (answer.nativeElement.getAttribute('ng-reflect-is-disabled') === 'false' && !isCompletedQuestion) {
-        answer.nativeElement.focus();
+      if (!answer.nativeElement.hasAttribute('disabled') && !isCompletedQuestion) {
+        answer.nativeElement.closest('.quiz__question').scrollIntoView({ behavior: "smooth" });
         isCompletedQuestion = true;
       }
     });

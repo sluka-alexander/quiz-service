@@ -55,7 +55,7 @@ export class CreateQuizPageComponent implements OnInit {
 
 
     setTimeout(()=> {
-      this.questionDescription.toArray()[this.questions.length - 1].nativeElement.focus();
+      this.questionDescription.toArray()[this.questions.length - 1].nativeElement.scrollIntoView({ behavior: "smooth" });
     }, 0);
   }
 
